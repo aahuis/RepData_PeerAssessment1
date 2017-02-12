@@ -39,6 +39,9 @@ print(paste0("Mean number of steps per day: ", mean(stepspd$steps)))
 print(paste0("Median number of steps per day: ", median(stepspd$steps)))
 ```
 
+[1] "Mean number of steps per day: 9354.22950819672"
+[1] "Median number of steps per day: 10395"
+
 ###Time series plot of the average number of steps taken
 
 Compute the average number of steps taken, averaged across all days (y-axis) on each interval
@@ -54,6 +57,8 @@ A peak in the data is visible, as well as variations during the day. From the va
 print(paste0("The interval with greatest steps average is: ", stepspi[stepspi$steps==max(stepspi$steps),]$intv))
 ```
 
+[1] "The interval with greatest steps average is: 835"
+
 We notice that the interval 835 roughly corresponds to the peak in the plot above.
 
 ##Strategy for imputing missing data
@@ -63,6 +68,8 @@ We will first investigate the total number of missing values in the dataset:
 ```{r}
 print(paste0("There are ",sum(is.na(df$steps))," NA values in the dataset."))
 ```
+
+[1] "There are 2304 NA values in the dataset."
 
 We will fill the missing values in the dataset with the mean for the corresponding interval:
 
@@ -94,6 +101,9 @@ The mean and median total number of steps taken per day:
 print(paste0("Mean number of steps per day, no NA: ", mean(stepspd2$steps)))
 print(paste0("Median number of steps per day, no NA: ", median(stepspd2$steps)))
 ```
+
+[1] "Mean number of steps per day, no NA: 10766.1886792453"
+[1] "Median number of steps per day, no NA: 10766.1886792453"
 
 The mean is with almost 2000 extra steps bigger than the values computed with NA present.
 The NA values have a rather limited effect upon the median values.

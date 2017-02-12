@@ -148,6 +148,7 @@ plot(stepspd$day, stepspd$steps, type =&quot;h&quot;, xlab=&quot;Date&quot;, yla
 <pre><code>## [1] &quot;Mean number of steps per day: 9354.22950819672&quot;</code></pre>
 <pre class="r"><code>print(paste0(&quot;Median number of steps per day: &quot;, median(stepspd$steps)))</code></pre>
 <pre><code>## [1] &quot;Median number of steps per day: 10395&quot;</code></pre>
+<p>[1] “Mean number of steps per day: 9354.22950819672” [1] “Median number of steps per day: 10395”</p>
 </div>
 <div id="time-series-plot-of-the-average-number-of-steps-taken" class="section level3">
 <h3>Time series plot of the average number of steps taken</h3>
@@ -159,6 +160,7 @@ plot(stepspi$intv, stepspi$steps, type=&quot;l&quot;, xlab=&quot;Time intervals&
 <p>A peak in the data is visible, as well as variations during the day. From the variations we could deduct that this person is moving more at regular intervals, e.g. like walking every couple of hours, and that there is a peak in the activity, perhaps the time when the person (more often) exercises intesively. Let’s take a look when does this person (on average) makes sport:</p>
 <pre class="r"><code>print(paste0(&quot;The interval with greatest steps average is: &quot;, stepspi[stepspi$steps==max(stepspi$steps),]$intv))</code></pre>
 <pre><code>## [1] &quot;The interval with greatest steps average is: 835&quot;</code></pre>
+<p>[1] “The interval with greatest steps average is: 835”</p>
 <p>We notice that the interval 835 roughly corresponds to the peak in the plot above.</p>
 </div>
 <div id="strategy-for-imputing-missing-data" class="section level2">
@@ -166,6 +168,7 @@ plot(stepspi$intv, stepspi$steps, type=&quot;l&quot;, xlab=&quot;Time intervals&
 <p>We will first investigate the total number of missing values in the dataset:</p>
 <pre class="r"><code>print(paste0(&quot;There are &quot;,sum(is.na(df$steps)),&quot; NA values in the dataset.&quot;))</code></pre>
 <pre><code>## [1] &quot;There are 2304 NA values in the dataset.&quot;</code></pre>
+<p>[1] “There are 2304 NA values in the dataset.”</p>
 <p>We will fill the missing values in the dataset with the mean for the corresponding interval:</p>
 <pre class="r"><code>dforig &lt;- df
 for (i in 1:dim(df)[1]) {
@@ -187,6 +190,7 @@ plot(stepspd2$day, stepspd2$steps, type =&quot;h&quot;, xlab=&quot;Date&quot;, y
 <pre><code>## [1] &quot;Mean number of steps per day, no NA: 10766.1886792453&quot;</code></pre>
 <pre class="r"><code>print(paste0(&quot;Median number of steps per day, no NA: &quot;, median(stepspd2$steps)))</code></pre>
 <pre><code>## [1] &quot;Median number of steps per day, no NA: 10766.1886792453&quot;</code></pre>
+<p>[1] “Mean number of steps per day, no NA: 10766.1886792453” [1] “Median number of steps per day, no NA: 10766.1886792453”</p>
 <p>The mean is with almost 2000 extra steps bigger than the values computed with NA present. The NA values have a rather limited effect upon the median values.</p>
 </div>
 </div>
