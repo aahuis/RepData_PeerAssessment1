@@ -100,7 +100,7 @@ The NA values have a rather limited effect upon the median values.
 
 ##Comparison of weekdays and weekends' values
 
-We first create a new factor variable in the dataset with two levels – “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.
+We first create a new factor variable in the dataset with two levels - "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
 
 ```{r}
 dfnew$pos <- "weekday"
